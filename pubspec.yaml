@@ -1,0 +1,34 @@
+name: phone_authentication_flutter
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^1.1.4
+  firebase_core: ^1.1.1
+  modal_progress_hud: ^0.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
+
+  fonts:
+    - family: Open Sans Bold
+      fonts:
+        - asset: fonts/open_sans_bold.ttf
+    - family: Open Sans SemiBold
+      fonts:
+        - asset: fonts/open_sans_semibold.ttf
