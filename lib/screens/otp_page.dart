@@ -97,8 +97,8 @@ class _OtpPageState extends State<OtpPage> {
                     ],
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 32, right: 32, left: 32),
+                Padding(
+                  padding: EdgeInsets.only(left: 32, right: 32, top: 32),
                   child: NumberInput(
                     controller: optController,
                     hintText: 'Enter OTP',
@@ -108,16 +108,14 @@ class _OtpPageState extends State<OtpPage> {
                     },
                   ),
                 ),
-                Flexible(
-                  child: RoundButton(
-                    text: 'verify OTP',
-                    leftMargin: 32.0,
-                    rightMargin: 32.0,
-                    topMargin: 32.0,
-                    onPressed: () {
-                      phoneCredential(context, _otp);
-                    },
-                  ),
+                RoundButton(
+                  text: 'verify OTP',
+                  leftMargin: 32.0,
+                  rightMargin: 32.0,
+                  topMargin: 32.0,
+                  onPressed: () {
+                    phoneCredential(context, _otp);
+                  },
                 ),
               ],
             ),

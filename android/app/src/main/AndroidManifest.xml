@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.phone_authentication_flutter">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="phone_authentication_flutter"
+        android:label="Phone Authentication Flutter"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -15,9 +15,10 @@ class _LogoutPageState extends State<LogoutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff121212),
-      body: SafeArea(
-        child: Center(
-          child: Flexible(
+      body: WillPopScope(
+        onWillPop: () async => false,
+        child: SafeArea(
+          child: Center(
             child: Column(
               children: <Widget>[
                 Flexible(

@@ -62,46 +62,48 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.only(top: 32, right: 32, left: 32),
                     child: Row(
                       children: <Widget>[
-                        NumberInput(
+                        Expanded(
                           flex: 1,
-                          hintText: '+91',
-                          controller: codeController,
-                          onChanged: (value) {
-                            countryCode = value;
-                          },
+                          child: NumberInput(
+                            hintText: '+91',
+                            controller: codeController,
+                            onChanged: (value) {
+                              countryCode = value;
+                            },
+                          ),
                         ),
                         SizedBox(
                           width: 25,
                         ),
-                        NumberInput(
+                        Expanded(
                           flex: 4,
-                          hintText: 'Your Phone Number',
-                          controller: phoneController,
-                          onChanged: (value) {
-                            phoneNumber = value;
-                          },
+                          child: NumberInput(
+                            hintText: 'Your Phone Number',
+                            controller: phoneController,
+                            onChanged: (value) {
+                              phoneNumber = value;
+                            },
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Flexible(
-                  child: RoundButton(
-                    leftMargin: 32,
-                    rightMargin: 32,
-                    topMargin: 32,
-                    text: 'Generate OTP',
-                    onPressed: () async {
-                      if (countryCode != null && phoneNumber != null) {
-                        String number =
-                            '+${codeController.text}${phoneController.text}';
-                        setState(() {
-                          _showProgress = true;
-                        });
-                        _service.verifyPhoneNumber(context, number);
-                      }
-                    },
-                  ),
+                RoundButton(
+                  leftMargin: 32,
+                  rightMargin: 32,
+                  topMargin: 32,
+                  text: 'Generate OTP',
+                  onPressed: () async {
+                    if (countryCode != null && phoneNumber != null) {
+                      String number =
+                          '+${codeController.text}${phoneController.text}';
+                      setState(() {
+                        _showProgress = true;
+                      });
+                      _service.verifyPhoneNumber(context, number);
+                    }
+                  },
                 ),
               ],
             ),
